@@ -96,11 +96,11 @@ int main()
         SetConsoleTitle(TEXT("YooConsole Startup"));
 
         string Color;
-        cout << "Please Pick The Text Color Following List: " << "\033[34m" << "Blue = 1 " << "\033[0m" << "\033[32m" << "Green = 2 " << "\033[0m" << endl;
+        cout << "Please Pick The Text Color Following List: " << "\033[34m" << "Blue = 1 " << "\033[32m" << "Green = 2 " << "\033[36m" << "Aqua = 3 " << endl;
         cin >> Color;
 
         string BGColor;
-        cout << "Please Pick Your Background Color: " << "\033[34m" << "Blue = 1 " << "\033[0m" << "\033[32m" << "Green = 2 " << "\033[0m" << endl;
+        cout << "Please Pick Your Background Color: " << "\033[34m" << "Blue = 1 " << "\033[32m" << "Green = 2 " << "\033[36m" << "Aqua = 3 " << endl;
         cin >> BGColor;
 
         string cmd("Color ");
@@ -173,6 +173,7 @@ int main()
                 }
                 else if (command == "driver check")
                 {
+                    SetConsoleTitle(TEXT("YooConsole Driver Check"));
                     int age;
 
                     cout << "\nPlease Enter Your Age To See If You Are Eligble For A Drivers Licence: ";
@@ -192,10 +193,28 @@ int main()
                 {
                     SetConsoleTitle(TEXT("YooConsole Pi Function"));
 
+                    string unit;
+                    float radius = 0;
+                    cout << "Target Units";
+                    cin >> unit;
+
+                    cout << "\nCircle Radius";
+                    cin >> radius;
+
+                    cout << "(pi(" << radius << unit << "*" << radius << unit << ") = " << ((mathPi * radius) * radius) << unit;
+                    cout << "\n\n Area Of Circle Is " << ((mathPi) * (radius * radius)) << unit << "\n";
+
+                    system("pause");
+                    cout << "Press Any Key To Return To Menu";
+                    reset = true;
+                    system("CLS");
+
                 }
 
                 else if (command == "tri")
                 {
+                    SetConsoleTitle(TEXT("YooConsole Tri Function"));
+
                     int cornerA = 0;
                     int cornerB = 0;
                     int cornerC = 0;
@@ -211,6 +230,11 @@ int main()
                         float result = (cornerA * cornerB) / 2;
                         cout << "\tThe Area Of Triangle is = " << result << "sq.cm";
 
+                        system("pause");
+                        cout << "Press Any Key To Return To Menu";
+                        reset = true;
+                        system("CLS");
+
                     }
                     catch (exception)
                     {
@@ -218,6 +242,66 @@ int main()
                         reset = true;
                         system("CLS");
                     }
+                }
+                else if (command == "isequal")
+                {
+                    SetConsoleTitle(TEXT("YooConsole Is Number Equal"));
+                    int num = 0;
+                    cout << "\t Please Put A Number That You Would Like To Find Out If It Is Equal Or Odd: ";
+                    cin >> num;
+                    
+                    if (num % 2 == 0)
+                    {
+                        cout << "Number (" << num << ") Is Even" << "\n";
+                    }
+                    else
+                    {
+                        cout << "Number (" << num << ") Is Odd\n";
+                    }
+
+                    system("pause");
+                    cout << "Press Any Key To Return To Menu";
+                    reset = true;
+                    system("CLS");
+
+                }
+                else if (command == "prime")
+                {
+                    SetConsoleTitle(TEXT("YooConsole Prime Checker"));
+                    int num = 0;
+                    cout << "Please Enter A Number Which You Would Like To Find The Prime Of: ";
+                    cin >> num;
+
+                    bool isPrime = true;
+
+                    if (num == 0 || num == 1)
+                    {
+                        isPrime = false;
+                    }
+                    else
+                    {
+                        for (int i = 2; i <= num / 2; i++)
+                        {
+                            if (num % i == 0)
+                            {
+                                isPrime = false;
+                            }
+                        }
+                    }
+
+                    if (isPrime)
+                    {
+                        cout << "\nNumber (" << num << ") Is Prime\n";
+                    }
+                    else
+                    {
+                        cout << "\nNumber (" << num << ") Is Not Prime\n";
+                    }
+
+                    system("pause");
+                    cout << "Press Any Key To Return To Menu";
+                    reset = true;
+                    system("CLS");
                 }
 
                 else
