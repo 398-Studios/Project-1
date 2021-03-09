@@ -13,7 +13,8 @@
 // Biggest - Line 470
 // Loop - Line 509
 // LoopF - Line 535
-// Prime Range - 556 
+// PrimeRange - 556 
+// Prime2 - Line 607
 
 #include <iostream>
 #include <string>
@@ -67,6 +68,7 @@ int main()
             cout << "\t|           YooConsole 0.0.1              |\n";
             cout << "\t|                                         |\n";
             cout << "\t+-----------------------------------------+\n";
+            cout << "add | driver check | pi | tri | isequal | prime | operand | Biggest | loop | loopF | primeRange | prime2\n";
             bool console = true;
 
             while (console == true)
@@ -602,6 +604,43 @@ int main()
                     reset = true;
                     system("CLS");
                 
+                }
+                else if (command == "prime2")
+                {
+                    float a, b, c, x1, x2, discriminant, truePart, falsePart; // float intergers
+                    cout << "Enter a, b, c: "; 
+                    cin >> a >> b >> c; // get intergers
+                    discriminant = b * b - 4 * a * c; // calcuate b * b - 4 * a * c
+
+                    if (discriminant > 0) // if discriminant is greater than 0 then roots are real and unequal
+                    {
+                        x1 = (-b + sqrt(discriminant)) / (2 * a); // take negivate vale of b and add sqrt of discriminant and divide by 2*a
+                        x2 = (-b - sqrt(discriminant)) / (2 * a); // take negivate vale of b and subtract sqrt of discriminant and divide by 2*a
+                        cout << "Roots are real and unequal.\n";
+                        cout << "x1 = " << x1 << ";\t";
+                        cout << "x2 = " << x2 << "\n";
+                    }
+
+                    else if (discriminant == 0) // if discriminant is equal then roots are real and the equal
+                    {
+                        cout << "Roots are real and equal.\n";
+                        x1 = -b / (2 * a); // take negitave value of b and divide by 2*a
+                        cout << "x1 =" << x1 << ";\t";
+                        cout << "x2 =" << x1 << "\n";
+                    }
+
+                    else  // else the roots are imaginary
+                    {
+                        truePart = -b / (2 * a); // take negitave value of b and divide by 2*a
+                        falsePart = sqrt(-discriminant) / (2 * a); // take sqrt of negitave value of discriminant and divide by 2*a
+                        cout << "Roots are imaginary.\n";
+                        cout << "x1 = nan;\t";
+                        cout << "x2 = nan\n";
+                    }
+                    system("pause");
+                    cout << "Press Any Key To Return To Menu"; // return to menu
+                    reset = true;
+                    system("CLS");
                 }
 
                 else
