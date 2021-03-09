@@ -13,6 +13,7 @@
 // Biggest - Line 470
 // Loop - Line 509
 // LoopF - Line 535
+// Prime Range - 556 
 
 #include <iostream>
 #include <string>
@@ -584,7 +585,7 @@ int main()
 
                         if (isPrime)
                         {
-                            cout << "\nNumber (" << num << ") Is Prime\n"; // output if number is prime
+                            cout << num << "\t"; // output if number is prime
                         }
                     }
 
