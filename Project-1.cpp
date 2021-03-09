@@ -1,6 +1,19 @@
 // Project-1.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+
+// For any teacher looking at this. here is code of index
+// Add Function - Line 74
+// Age Check - Line 102
+// Pi - Line 121
+// Tri - Line 143
+// IsEqual - Line 176
+// Prime - Line 199
+// Oprand - Line 260
+// Biggest - Line 470
+// Loop - Line 509
+// LoopF - Line 535
+
 #include <iostream>
 #include <string>
 #include <stdlib.h>
@@ -11,96 +24,20 @@
 
 using namespace std;
 
-int console()
-{
-
-    cout << "\t+-----------------------------------------+\n";
-    cout << "\t|                                         |\n";
-    cout << "\t|           YooConsole 0.0.1              |\n";
-    cout << "\t|                                         |\n";
-    cout << "\t+-----------------------------------------+\n";
-    bool console = true;
-
-    while (console == true)
-    {
-        SetConsoleTitle(TEXT("YooConsole 0.0.1"));
-        bool reset = false;
-        string command = "";
-        std::cout << "Please Enter Your Command: ";
-        std::cin >> command;
-
-        if (command == "close")
-        {
-            console = false;
-        }
-        else if (command == "add")
-        {
-            SetConsoleTitle(TEXT("YooConsole Add Function"));
-            int numberA = 0;
-            int numberB = 0;
-
-            try
-            {
-                std::cout << "\tWhat Is Your First Number: ";
-                std::cin >> numberA;
-
-                std::cout << "\tWhat Is Your Second Number: ";
-                std::cin >> numberB;
-
-                std::cout << "\tThe Sum Of Those 2 Numbers Is " << numberA + numberB << "\n\n";
-
-                system("pause");
-                cout << "Press Any Key To Return To Menu";
-                reset = true;
-                system("CLS");
-
-            }
-            catch (exception)
-            {
-                std::cout << "Test";
-            }
-        }
-        else if (command == "pi")
-        {
-            SetConsoleTitle(TEXT("YooConsole Pi Function"));
-
-        }
-
-        else
-        {
-            cout << "Unknown Command";
-        }
-
-        if (!reset)
-            cout << "\n";
-
-        else
-        {
-            cout << "\t+-----------------------------------------+\n";
-            cout << "\t|                                         |\n";
-            cout << "\t|           YooConsole 0.0.1              |\n";
-            cout << "\t|                                         |\n";
-            cout << "\t+-----------------------------------------+\n";
-        }
-
-    }
-    return 0;
-}
-
 int main()
 {
-    bool running = true;
+    bool running = true; //set running status for the program
     while (running == true)
     {
-        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE); // start color picking
         SetConsoleTitle(TEXT("YooConsole Startup"));
 
         string Color;
-        cout << "Please Pick The Text Color Following List: " << "\033[34m" << "Blue = 1 " << "\033[32m" << "Green = 2 " << "\033[36m" << "Aqua = 3 "  << "\033[0m" << endl;
+        cout << "Please Pick The Text Color Following List: " << "\033[34m" << "Blue = 1 " << "\033[32m" << "Green = 2 " << "\033[36m" << "Aqua = 3 "  << "\033[0m" << endl; // pick color 1
         cin >> Color;
 
         string BGColor;
-        cout << "Please Pick Your Background Color: " << "\033[34m" << "Blue = 1 " << "\033[32m" << "Green = 2 " << "\033[36m" << "Aqua = 3 " "\033[0m" << endl;
+        cout << "Please Pick Your Background Color: " << "\033[34m" << "Blue = 1 " << "\033[32m" << "Green = 2 " << "\033[36m" << "Aqua = 3 " "\033[0m" << endl; // pick color 2
         cin >> BGColor;
 
         string cmd("Color ");
@@ -112,19 +49,19 @@ int main()
         system("cls");
 
         string myName;
-        cout << "Hello What Is Your Name: ";
+        cout << "Hello What Is Your Name: "; // input name
         cin >> myName;
     namesetup:
         string confirm;
-        cout << "Is " << myName << " Your Name (y/n)";
+        cout << "Is " << myName << " Your Name (y/n)"; // confirm name
         cin >> confirm;
 
-        if (confirm == "y")
+        if (confirm == "y") // if confirm name is Y then start console
         {
             system("CLS");
 
 
-            cout << "\t+-----------------------------------------+\n";
+            cout << "\t+-----------------------------------------+\n";  // console start screen
             cout << "\t|                                         |\n";
             cout << "\t|           YooConsole 0.0.1              |\n";
             cout << "\t|                                         |\n";
@@ -136,15 +73,15 @@ int main()
                 SetConsoleTitle(TEXT("YooConsole 0.0.1"));
                 bool reset = false;
                 string command = "";
-                std::cout << "Please Enter Your Command: ";
+                std::cout << "Please Enter Your Command: "; //enter command
                 getline(cin >> ws, command);
 
-                if (command == "close")
+                if (command == "close") // close command - closes console
                 {
                     console = false;
                     running = false;
                 }
-                else if (command == "add")
+                else if (command == "add") // add command - sums 2 numbers
                 {
                     SetConsoleTitle(TEXT("YooConsole Add Function"));
                     int numberA = 0;
@@ -152,16 +89,16 @@ int main()
 
                     try
                     {
-                        std::cout << "\tWhat Is Your First Number: ";
+                        std::cout << "\tWhat Is Your First Number: "; // get number a
                         std::cin >> numberA;
 
-                        std::cout << "\tWhat Is Your Second Number: ";
+                        std::cout << "\tWhat Is Your Second Number: "; // get number b
                         std::cin >> numberB;
 
-                        std::cout << "\tThe Sum Of Those 2 Numbers Is " << numberA + numberB << "\n\n";
+                        std::cout << "\tThe Sum Of Those 2 Numbers Is " << numberA + numberB << "\n\n"; //show sum
 
                         system("pause");
-                        cout << "Press Any Key To Return To Menu";
+                        cout << "Press Any Key To Return To Menu"; // return to menu
                         reset = true;
                         system("CLS");
 
@@ -171,46 +108,45 @@ int main()
                         std::cout << "Test";
                     }
                 }
-                else if (command == "driver check")
+                else if (command == "driver check") //driver check command - checks if user is above or below age of 16
                 {
                     SetConsoleTitle(TEXT("YooConsole Driver Check"));
                     int age;
 
-                    cout << "\nPlease Enter Your Age To See If You Are Eligble For A Drivers Licence: ";
+                    cout << "\nPlease Enter Your Age To See If You Are Eligble For A Drivers Licence: "; // user input age
                     cin >> age;
 
                     if (age >= 16)
-                        cout << "\nHi " << myName << " You Are Older Than 16 You Can Drive\n\n";
+                        cout << "\nHi " << myName << " You Are Older Than 16 You Can Drive\n\n"; //if user is older than 16
                     else
-                        cout << "\nHi " << myName << " You Are Younger Than 16 You Cannot Drive\n\n";
+                        cout << "\nHi " << myName << " You Are Younger Than 16 You Cannot Drive\n\n"; //if user is younger than 16
 
                     system("pause");
-                    cout << "Press Any Key To Return To Menu";
+                    cout << "Press Any Key To Return To Menu"; // return to menu
                     reset = true;
                     system("CLS");
                 }
-                else if (command == "pi")
+                else if (command == "pi") // pi command - why the fuck did we even do this
                 {
                     SetConsoleTitle(TEXT("YooConsole Pi Function"));
 
                     string unit;
                     float radius = 0;
-                    cout << "Target Units";
+                    cout << "Target Units"; // get units
                     cin >> unit;
 
-                    cout << "\nCircle Radius";
+                    cout << "\nCircle Radius"; // get radius
                     cin >> radius;
 
-                    cout << "(pi(" << radius << unit << "*" << radius << unit << ") = " << ((mathPi * radius) * radius) << unit;
+                    cout << "(pi(" << radius << unit << "*" << radius << unit << ") = " << ((mathPi * radius) * radius) << unit; //calcuate and output pi
                     cout << "\n\n Area Of Circle Is " << ((mathPi) * (radius * radius)) << unit << "\n";
 
                     system("pause");
-                    cout << "Press Any Key To Return To Menu";
+                    cout << "Press Any Key To Return To Menu"; // return to menu "finally"
                     reset = true;
                     system("CLS");
 
                 }
-
                 else if (command == "tri")
                 {
                     SetConsoleTitle(TEXT("YooConsole Tri Function"));
@@ -260,16 +196,16 @@ int main()
                     }
 
                     system("pause");
-                    cout << "Press Any Key To Return To Menu";
+                    cout << "Press Any Key To Return To Menu"; // return to menu
                     reset = true;
                     system("CLS");
 
                 }
-                else if (command == "prime")
+                else if (command == "prime") // prime checker function
                 {
                     SetConsoleTitle(TEXT("YooConsole Prime Checker"));
                     int num = 0;
-                    cout << "Please Enter A Number Which You Would Like To Find The Prime Of: ";
+                    cout << "Please Enter A Number Which You Would Like To Find The Prime Of: "; // input number
                     cin >> num;
 
                     bool isPrime = true;
@@ -291,29 +227,28 @@ int main()
 
                     if (isPrime)
                     {
-                        cout << "\nNumber (" << num << ") Is Prime\n";
+                        cout << "\nNumber (" << num << ") Is Prime\n"; // output if number is prime
                     }
                     else
                     {
-                        cout << "\nNumber (" << num << ") Is Not Prime\n";
+                        cout << "\nNumber (" << num << ") Is Not Prime\n"; // output if number is not prime
                     }
 
                     system("pause");
-                    cout << "Press Any Key To Return To Menu";
+                    cout << "Press Any Key To Return To Menu"; // return to menu
                     reset = true;
                     system("CLS");
-                }
-                
-                else if (command == "diediedie")
+                }  
+                else if (command == "diediedie") // simple command
                 {
                 SetConsoleTitle(TEXT("Just Give Up With Life"));
                     string die;
-                    cout << "Do You Want To Die (y/n)";
+                    cout << "Do You Want To Die (y/n)"; // simple yes no question
                     cin >> die;
 
                     if (die == "y")
                     {
-                        cout << "Heres Your Wish";
+                        cout << "Heres Your Wish"; // closes console ifdie = y
                         console = false;
                         running = false;
                     }
@@ -321,31 +256,30 @@ int main()
                     else
                     {
                         system("pause");
-                        cout << "Press Any Key To Return To Menu";
+                        cout << "Press Any Key To Return To Menu"; // return to menu
                         reset = true;
                         system("CLS");
                     }
                 } 
-
-                else if (command == "operand")
+                else if (command == "operand") // oprand command
                 {
                     SetConsoleTitle(TEXT("YooConsole Operand Checker"));
                     int a, b, x, y;
 
-                    cout << "Value A:";
+                    cout << "Value A:"; // input value a
                     cin >> a;
 
-                    cout << "\nValue B";
+                    cout << "\nValue B"; // input value b
                     cin >> b;
 
-                    cout << "\nValue X";
+                    cout << "\nValue X"; // input x
                     cin >> x;
 
                     y = a * x + b;
-                    cout << "The Value Of A*X+B is " << y;
+                    cout << "The Value Of A*X+B is " << y; // output value of oprands
 
                     system("pause");
-                    cout << "Press Any Key To Return To Menu";
+                    cout << "Press Any Key To Return To Menu"; // return to menu
                     reset = true;
                     system("CLS");
 
@@ -353,22 +287,21 @@ int main()
                 else if (command == "guitest")
                 {
                     SetConsoleTitle(TEXT("GUI Test"));
-                    cout << "Sorry This Function Is Useless Because The Idiots Didnt Install The .NET Framework\n";
+                    cout << "Sorry This Function Is Useless Because The Idiots Are Teaching Us The Wrong Damn Language\n";
 
                     system("pause");
-                    cout << "Press Any Key To Return To Menu";
+                    cout << "Press Any Key To Return To Menu"; // return to menu
                     reset = true;
                     system("CLS");
 
                 }
-
                 else if (command == "hjonk") // HJOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOK
                 {
                     SetConsoleTitle(TEXT("Goose"));   
                     system("start chrome.exe https://cdn.discordapp.com/attachments/813243300626694195/814838411490885632/Goose.png https://www.youtube.com/watch?v=riJs7DlphEM");
                    
                     system("pause");
-                    cout << "Press Any Key To Return To Menu";
+                    cout << "Press Any Key To Return To Menu"; // return to menu
                     reset = true;
                     system("CLS");
                 }
@@ -476,7 +409,6 @@ int main()
                     reset = true;
                     system("CLS");
                 }
-
                 else if (command == "genius")
                 {
                     SetConsoleTitle(TEXT("Genius"));
@@ -487,7 +419,6 @@ int main()
                     reset = true;
                     system("CLS");
                 }
-
                 else if (command == "jukebox")
                 {
                     SetConsoleTitle(TEXT("YooConsole JukeBox"));
@@ -539,7 +470,6 @@ int main()
                         }
                     }
                 }
-
                 else if (command == "Biggest")
                 {
                     float a, b, c;
@@ -578,7 +508,6 @@ int main()
                         system("CLS");
                     }
                 }
-
                 else if (command == "loop")
                 {
                     int a;
@@ -623,6 +552,55 @@ int main()
                             reset = true;
                             system("CLS");
                         }
+                }
+                else if (command == "primeRange")
+                {
+                    SetConsoleTitle(TEXT("YooConsole Prime Checker"));
+                    int numa = 0;
+                    cout << "Choose A Starting Number: ";
+                    cin >> numa;
+
+                    int numb = 0;
+                    cout << "Choose A Ending Number: ";
+                    cin >> numb;  
+                    
+                    for (int num = numa; num < numb; num++)
+                    {
+                        bool isPrime = true;
+                        if (num == 0 || num == 1)
+                        {
+                            isPrime = false;
+                        }
+                        else
+                        {
+                            for (int i = 2; i <= num / 2; i++)
+                            {
+                                if (num % i == 0)
+                                {
+                                    isPrime = false;
+                                }
+                            }
+                        }
+
+                        if (isPrime)
+                        {
+                            cout << "\nNumber (" << num << ") Is Prime\n"; // output if number is prime
+                        }
+                    }
+
+                    if (numa <= numb)
+                    {
+                        cout << "Please Input A Starting Number Smaller Than The Ending Number";
+                        system("pause");
+                        reset = true;
+                        system("CLS");
+                    }
+
+                    system("pause");
+                    cout << "Press Any Key To Return To Menu"; // return to menu
+                    reset = true;
+                    system("CLS");
+                
                 }
 
                 else
