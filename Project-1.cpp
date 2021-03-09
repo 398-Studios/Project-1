@@ -509,7 +509,7 @@ int main()
                         }
                         case 2:
                         {
-                            SetConsoleTitle(TEXT("YooConsole - It Just Works"));
+                            SetConsoleTitle(TEXT("YooConsole - Now Playing It Just Works"));
                             system("start chrome.exe https://www.youtube.com/watch?v=YPN0qhSyWy8");
                             system("pause");
                             cout << "Press Any Key To Return To Menu";
@@ -577,6 +577,52 @@ int main()
                         reset = true;
                         system("CLS");
                     }
+                }
+
+                else if (command == "loop")
+                {
+                    int a;
+                    cout << "How Many Times Do You Want To Be Spammed: ";
+                    cin >> a;
+
+                    int i = 0;
+                    if (a <= 1000)
+                    {
+                        while (i <= a)
+                        {
+                            float test (i * 5);
+                            cout << "\n5 * " << i << " = " << test;
+                            i = i + 1; //i++                            
+                        }
+                    }
+                    else if (a >= 1000)
+                    {
+                        cout << "You Are A Fucking Retard Press Any Key To Return To Menu\n";
+                        system("pause");
+                        reset = true;
+                        system("CLS");
+                    }
+                }
+                else if (command == "loopF")
+                {
+                    int a = 0;
+                    cout << "What Is The Highest Number You Want To Go: ";
+                    cin >> a;
+
+                    if (a <= 1000)
+                    {
+                        for (int i = 1; i < a; i += 4)
+                        {
+                            cout << i << "\n";
+                        }
+                    }
+                    else if (a >= 1000)
+                        {
+                            cout << "You Are A Fucking Retard Press Any Key To Return To Menu\n";
+                            system("pause");
+                            reset = true;
+                            system("CLS");
+                        }
                 }
 
                 else
